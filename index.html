@@ -12,15 +12,17 @@
 <body>
 
     <div class="container"id="root">
-
+        <!--sezione di sinistra-->
         <aside>
+            <!--Sezione user-->
             <div class="user">
-
+                <!--imagine di profilo e nome utente-->
                 <div class="user-name-picture">
                     <img src="img/avatar_io.jpg" alt="user picture">
                     <span>Nome Utente</span>
                 </div>
 
+                <!--Sezione dei button-->
                 <div class="user-button">
                     <i class="fa-solid fa-circle-notch"></i>
                     <i class="fa-solid fa-message"></i>
@@ -29,10 +31,13 @@
 
             </div>
 
+            <!--Sezione per attivare le notifiche-->
             <div class="switch">
 
+                <!--icona bell di font awesome-->
                 <i class="fa-solid fa-bell-slash"></i>
 
+                <!--testo della sezione-->
                 <div class="switch-text">
                     <span class="bold">Ricevi notifiche di nuovi messaggi</span>
                     <span class="underline">Attiva notifiche desktop</span>
@@ -40,12 +45,18 @@
                 
             </div>
 
+            <!--Sezione input per ricerca della chat-->
             <div class="input-box">
                 <div class="input-section">
                     <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="inputFilter">
                     <i class="fa-solid fa-magnifying-glass"></i> 
                 </div>
                
+            </div>
+
+            <!--Sezione delle chat-->
+            <div class="chat">
+
             </div>
 
         </aside>
