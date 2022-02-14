@@ -119,12 +119,16 @@ aside .switch{
 }
 .input-box input{
     width: 100%;
-    padding: 5px 5px 5px 35px;
+    padding: 5px 5px 5px 40px;
     border: none;
     margin-right: 5px;
 }
 .input-box input:focus{
     outline: none ;  
+}
+
+.input-box ::placeholder{
+    color: #b9b9b9;
 }
 .input-box i{
     position: absolute;
@@ -153,8 +157,6 @@ aside .chat{
     align-items: center;
 }
 
-
-
 /*chat-items*/
 .chat .chat-items{
     width: 75%;
@@ -180,7 +182,6 @@ aside .chat{
 main{
     height: 100%;
     width: 70%;
-    background-color: violet;
 }
 
 /*chat-details*/
@@ -231,4 +232,41 @@ main .chat-text{
     width: 100%;
     background-image: url("../img/mine.jpg");
     overflow-y: scroll;
+}
+
+/*chat-input*/
+main .chat-input{
+    height: 90px;
+    width: 100%;
+    background-color: #f3eeea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-input .icon{
+    width: 7.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon i{
+    font-size: 25px;
+    color: #6b7377;
+}
+.chat-input .message-input{
+    width: 85%;
+}
+
+.message-input input{
+    width: 100%;
+    padding: 20px;
+    border: none;
+}
+.message-input ::placeholder{
+    color: #b9b9b9;
+}
+  
+.message-input input:focus{
+    outline: none ;  
 }

@@ -3,6 +3,7 @@ const vue = new Vue (
         el: '#root',
         data: {
             inputFilter:'',
+            newMessage:'',
             contacts: [
                 {
                     name: 'Michele',
