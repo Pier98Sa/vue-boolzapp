@@ -21,13 +21,46 @@ body{
     justify-content: center ;
     align-items: center;
 }
-
+/*Aside*/
 aside{
     height: 100%;
     width: 30%;
     background-color: aqua;
 }
+aside .user{
+    background-color: #eaeaea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
+}
+/*user-name-picture*/
+.user .user-name-picture{
+    padding: 20px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user .user-name-picture img{
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+/*user-button*/
+.user .user-button{
+    width: 50%;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   font-size: 25px;
+   color: #b1b1b1;
+}
+
+.user-button i{
+    margin: 0 15px;
+}
+/*Main*/
 main{
     height: 100%;
     width: 70%;
