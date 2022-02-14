@@ -28,6 +28,11 @@ body{
 .underline{
     text-decoration: underline;
 }
+
+.avatar{
+    width: 60px;
+    border-radius: 50%;
+}
 /*Aside*/
 aside{
     height: 100%;
@@ -130,7 +135,7 @@ aside .switch{
 /*conversations*/
 .conversations{
     height: calc(100% - 225px);
-    overflow-y: auto;
+    overflow-y: scroll;
 }
 /*Chat*/
 aside .chat{
@@ -140,7 +145,7 @@ aside .chat{
     border: 1px solid #efefef;
     
 }
-
+/*chat-avatar*/
 .chat-avatar {
     width: 25%;
     display: flex;
@@ -148,10 +153,9 @@ aside .chat{
     align-items: center;
 }
 
-.chat-avatar .avatar{
-    width: 60px;
-    border-radius: 50%;
-}
+
+
+/*chat-items*/
 .chat .chat-items{
     width: 75%;
 }
@@ -177,4 +181,46 @@ main{
     height: 100%;
     width: 70%;
     background-color: violet;
+}
+
+/*chat-details*/
+main .chat-details{
+    background-color: #eaeaea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+
+/*user-info*/
+.chat-details .user-info{
+    display: flex;
+    justify-content: flex-start;
+}
+.user-info .avatar{
+    margin: 0 10px;
+}
+.user-info .user-access{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: #6b7377;
+}
+
+.user-access .bold{
+    color: #000;
+}
+
+/*user-button-box*/
+
+.user-button-box{
+    display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   font-size: 25px;
+   color: #b1b1b1;
+}
+
+.user-button-box i{
+    margin: 0 15px;
 }
