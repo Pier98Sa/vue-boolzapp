@@ -298,6 +298,7 @@ main .chat-input{
     width: 100%;
     padding: 20px;
     border: none;
+    border-radius: 10px;
 }
 .message-input ::placeholder{
     color: #b9b9b9;
