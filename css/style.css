@@ -37,9 +37,9 @@ aside .user{
 /*user-name-picture*/
 .user .user-name-picture{
     padding: 20px;
-    width: 50%;
+    width: 60%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 .user .user-name-picture img{
@@ -49,7 +49,7 @@ aside .user{
 }
 /*user-button*/
 .user .user-button{
-    width: 50%;
+    width: 40%;
    display: flex;
    justify-content: flex-end;
    align-items: center;
