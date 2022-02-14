@@ -7,7 +7,15 @@
 
 body{
     font-family: Arial, Helvetica, sans-serif;
-    height: 100vh;
     background: rgba(213,219,217);
     background: linear-gradient(360deg,  rgba(213,219,217,1) 90%, rgba(28,150,135,1) 10%);
+}
+
+.container{
+    width: 80%;
+    min-width: 1080px;
+    height: calc(100vh - 100px);
+    min-height: 500px;
+    margin: 50px auto;
+    background-color: black;
 }
