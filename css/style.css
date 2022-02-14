@@ -190,6 +190,7 @@ main .chat-details{
     justify-content: space-between;
     align-items: center;
     height: 90px;
+    width: 100%;
 }
 
 /*user-info*/
@@ -223,4 +224,11 @@ main .chat-details{
 
 .user-button-box i{
     margin: 0 15px;
+}
+/*chat-text*/
+main .chat-text{
+    height: calc(100% - 180px);
+    width: 100%;
+    background-image: url("../img/mine.jpg");
+    overflow-y: scroll;
 }
