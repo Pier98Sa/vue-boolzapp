@@ -25,15 +25,19 @@ body{
 aside{
     height: 100%;
     width: 30%;
-    background-color: aqua;
+    background-color: #fff;
 }
+
+/*user*/
+
 aside .user{
     background-color: #eaeaea;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    height: 90px;
 }
+
 /*user-name-picture*/
 .user .user-name-picture{
     padding: 20px;
@@ -41,6 +45,7 @@ aside .user{
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    
 }
 .user .user-name-picture img{
     width: 50px;
@@ -59,6 +64,38 @@ aside .user{
 
 .user-button i{
     margin: 0 15px;
+}
+
+/*switch*/
+aside .switch{
+    height: 90px;
+    background-color: #8edafc;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.switch i{
+    color: #8edafc;
+    background-color: #f2fbff;
+    border-radius: 50%;
+    padding: 10px 5px;
+    font-size: 25px;
+    margin: 0 10px 0 20px;
+}
+
+.switch .switch-text{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.switch-text .bold{
+    font-weight: bold;
+}
+.switch-text .underline{
+    text-decoration: underline;
+    color: #5e8da3;
 }
 /*Main*/
 main{
