@@ -232,8 +232,43 @@ main .chat-text{
     width: 100%;
     background-image: url("../img/mine.jpg");
     overflow-y: scroll;
+    
+}
+.chat-area{
+    width: 85%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
+.chat-area .message-date{
+    font-size: 12px;
+    color: #bac1bb;
+    align-self: flex-end;
+}
+
+.chat-text .message{
+    padding: 15px 5px 5px 10px;
+    min-width: 200px;
+    border-radius: 12px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    
+}
+
+.user-message{
+    background-color: #d5f9ba;
+    align-self: flex-end;
+}
+
+.friend-message{
+    background-color: #fff;
+    align-self: flex-start;
+}
 /*chat-input*/
 main .chat-input{
     height: 90px;
