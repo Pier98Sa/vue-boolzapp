@@ -95,6 +95,20 @@ const vue = new Vue (
         methods:{
             changeChat(index){
                 this.active = index;
+            },
+            
+            sendMessage(){
+                if(this.newMessage.trim() == ''){
+                    
+                }else{
+                    this.contacts[this.active].messages.push({date:'15/02/2022 18:15', text: this.newMessage.trim(), status: 'sent' });
+                }
+                
+                this.newMessage = "";
+
+                setTimeout(() => {
+                    this.contacts[this.active].messages.push({date:'15/02/2022 18:15', text: 'ok', status: 'received' });
+                },1000);
             }
            
         }
