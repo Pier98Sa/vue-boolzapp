@@ -280,7 +280,7 @@ main .chat-text{
     align-items:flex-start;
     
 }
-
+/*classi per cambiare il colore e la posizione dei messagge*/
 .sent{
     background-color: #d5f9ba;
     align-self: flex-end;

@@ -79,7 +79,9 @@
                
         </aside>
 
+        <!--Main-->
         <main>
+            <!--Info della chat-->
             <div class="chat-details" >
                 <div class="user-info" >
                     <img class="avatar" :src="`img/avatar${contacts[active].avatar}.jpg`" alt="user picture">
@@ -100,6 +102,7 @@
 
             </div>
 
+            <!--Elenco della cronologia dei messaggi-->
             <div class="chat-text">
 
                 <div class="chat-area" v-for="message in contacts[active].messages">
@@ -113,6 +116,7 @@
 
             </div>
 
+            <!--Sezione di input della chat-->
             <div class="chat-input">
                 <div class="icon">
                     <i class="far fa-face-smile"></i>

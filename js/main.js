@@ -93,10 +93,12 @@ const vue = new Vue (
            
         },
         methods:{
+            //funzione per cambiare la chat visualizzata con l'utilizzo di un indice  
             changeChat(index){
                 this.active = index;
             },
             
+            //funzione per inviare un messaggio e riceverne uno di risposta dopo un secondo
             sendMessage(){
                 if(this.newMessage.trim() == ''){
                     
