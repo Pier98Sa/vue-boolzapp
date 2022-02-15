@@ -57,7 +57,7 @@
             <!--Sezione delle conversazioni-->
             <div class="conversations">
 
-                <div class="chat" v-for="(contact,index) in contacts" @click="changeChat(index)">
+                <div class="chat" :class="(index == active) ? 'active':''" v-for="(contact,index) in contacts" @click="changeChat(index)">
 
                     <div class="chat-avatar">
                         <img class="avatar" :src="`img/avatar${contact.avatar}.jpg`" alt="user picture">
@@ -103,8 +103,8 @@
             <div class="chat-text">
 
                 <div class="chat-area" v-for="message in contacts[active].messages">
-                    <div class="message" :class="message.status == 'sent'? 'sent':'recived'">
-                        <p>{{message.text}}</p>
+                    <div class="message" :class="(message.status == 'sent') ? 'sent':'recived'">
+                        <span>{{message.text}}</span>
                         <span class="message-date">{{message.date}}</span>
                     </div>
                   
