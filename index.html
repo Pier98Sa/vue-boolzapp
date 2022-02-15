@@ -17,9 +17,9 @@
             <!--Sezione user-->
             <div class="user">
                 <!--imagine di profilo e nome utente-->
-                <div class="user-name-picture">
+                <div class="user-profile">
                     <img  src="img/avatar_io.jpg" alt="user picture">
-                    <span>Nome Utente</span>
+                    <span class="bold">Nome Utente</span>
                 </div>
 
                 <!--Sezione dei button-->
@@ -40,7 +40,7 @@
                 <!--testo della sezione-->
                 <div class="switch-text">
                     <span class="bold">Ricevi notifiche di nuovi messaggi</span>
-                    <span class="underline">Attiva notifiche desktop</span>
+                    <a href='#' class="link">Attiva notifiche desktop</a>
                 </div>
                 
             </div>
@@ -57,20 +57,20 @@
             <!--Sezione delle conversazioni-->
             <div class="conversations">
 
-                <div class="chat">
+                <div class="chat" v-for="(contact,index) in contacts" @click="changeChat(index)">
 
                     <div class="chat-avatar">
-                        <img class="avatar" src="img/avatar_1.jpg" alt="user picture">
+                        <img class="avatar" :src="`img/avatar${contact.avatar}.jpg`" alt="user picture">
                     </div>
     
                     <div class="chat-items">
                         <div class="chat-info">
-                            <span class="bold">Michele</span>
+                            <span class="bold">{{contact.name}}</span>
                             <span class="date">10/01/2020 16:15:22</span>
                         </div>
     
                         <div class="message">
-                           <p> Tutto fatto!...</p>
+                           <p > Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae velit debitis assumenda enim dolore laudantium expedita perferendis mollitia, nam qui libero dolor laboriosam beatae aliquid eius aliquam quaerat cumque magnam?</p>
                         </div>
                     </div>
                     
@@ -80,12 +80,12 @@
         </aside>
 
         <main>
-            <div class="chat-details">
-                <div class="user-info">
-                    <img class="avatar"src="img/avatar_1.jpg" alt="user picture">
+            <div class="chat-details" >
+                <div class="user-info" >
+                    <img class="avatar" :src="`img/avatar${contacts[active].avatar}.jpg`" alt="user picture">
                     
                     <div class="user-access">
-                        <span class="bold">Michele</span>
+                        <span class="bold">{{contacts[active].name}}</span>
                         <span>Ultimo accesso oggi 10/01/2020</span>
                         <span>alle 16:15:22</span>
                     </div>
@@ -102,19 +102,12 @@
 
             <div class="chat-text">
 
-                <div class="chat-area">
-                    <div class="message user-message">
-                        <p>Hai portato a spasso il cane ?</p>
-                        <span class="message-date">10/01/2020 15:30:55</span>
+                <div class="chat-area" v-for="message in contacts[active].messages">
+                    <div class="message" :class="message.status == sent? 'sent':'recived'">
+                        <p>{{message.text}}</p>
+                        <span class="message-date">{{message.date}}</span>
                     </div>
-                    <div class="message user-message">
-                        <p>Ricordati di dargli da mangiare</p>
-                        <span class="message-date">10/01/2020 15:50:00</span>
-                    </div>
-                    <div class="message friend-message">
-                        <p>Tutto fatto!</p>
-                        <span class="message-date">10/01/2020 16:15:22</span>
-                    </div>
+                  
                 </div>
                 
 
@@ -122,7 +115,7 @@
 
             <div class="chat-input">
                 <div class="icon">
-                    <i class="fa-solid fa-face-smile"></i>
+                    <i class="far fa-face-smile"></i>
                 </div>
                 
                 <div class="message-input">

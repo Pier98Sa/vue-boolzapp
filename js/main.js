@@ -4,6 +4,7 @@ const vue = new Vue (
         data: {
             inputFilter:'',
             newMessage:'',
+            active: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -92,7 +93,10 @@ const vue = new Vue (
            
         },
         methods:{
-            
+            changeChat(index){
+                this.active = index;
+            }
+           
         }
     }
 );

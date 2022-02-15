@@ -7,16 +7,18 @@
 
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background: rgba(213,219,217);
-    background: linear-gradient(360deg,  rgba(213,219,217,1) 90%, rgba(28,150,135,1) 10%);
+    background: linear-gradient(180deg, #1c9588 135px, #dadbd4 135px);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container{
     width: 80%;
     min-width: 1080px;
-    height: calc(100vh - 50px);
+    height: calc(100% - 50px);
     min-height: 500px;
-    margin: 25px auto;
     display: flex;
     justify-content: center ;
     align-items: center;
@@ -25,10 +27,6 @@ body{
 .bold{
     font-weight: bold;
 }
-.underline{
-    text-decoration: underline;
-}
-
 .avatar{
     width: 60px;
     border-radius: 50%;
@@ -38,6 +36,8 @@ aside{
     height: 100%;
     width: 30%;
     background-color: #fff;
+    display: flex;
+    flex-direction: column;
 }
 
 /*user*/
@@ -48,10 +48,11 @@ aside .user{
     justify-content: space-between;
     align-items: center;
     height: 90px;
+    flex-shrink: 0;
 }
 
-/*user-name-picture*/
-.user .user-name-picture{
+/*user-profile*/
+.user .user-profile{
     padding: 20px;
     width: 60%;
     display: flex;
@@ -59,7 +60,7 @@ aside .user{
     align-items: center;
     
 }
-.user-name-picture img{
+.user-profile img{
     width: 50px;
     border-radius: 50%;
     margin-right: 10px;
@@ -85,14 +86,15 @@ aside .switch{
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .switch i{
     color: #8edafc;
     background-color: #f2fbff;
     border-radius: 50%;
-    padding: 10px 5px;
-    font-size: 25px;
+    padding: 15px 10px;
+    font-size: 20px;
     margin: 0 10px 0 20px;
 }
 
@@ -103,7 +105,7 @@ aside .switch{
 }
 
 
-.switch-text .underline{
+.switch-text .link{
     color: #5e8da3;
 }
 
@@ -112,6 +114,7 @@ aside .switch{
     background-color: #fafafa;
     color: #b6b9bb;
     height: 45px;
+    flex-shrink: 0;
 }
 .input-box .input-section{
     padding: 10px;
@@ -138,16 +141,21 @@ aside .switch{
 }
 /*conversations*/
 .conversations{
-    height: calc(100% - 225px);
+    flex-grow: 1;
     overflow-y: scroll;
 }
 /*Chat*/
-aside .chat{
+.conversations .chat{
     display: flex;
     color: #b6b9bb;
     padding: 10px;
     border: 1px solid #efefef;
     
+}
+
+.chat.active,
+.chat:hover{
+    background-color: #e9ebeb;
 }
 /*chat-avatar*/
 .chat-avatar {
@@ -173,15 +181,23 @@ aside .chat{
 .chat-info .date{
     font-size: 10px;
 }
-
+/*message*/
 .chat-items .message{
     margin-top: 5px;
-    font-size: 13px;
+    font-size: 13px;  
+}
+
+.message p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 /*Main*/
 main{
     height: 100%;
     width: 70%;
+    display: flex;
+    flex-direction: column;
 }
 
 /*chat-details*/
@@ -192,6 +208,7 @@ main .chat-details{
     align-items: center;
     height: 90px;
     width: 100%;
+    flex-shrink: 0;
 }
 
 /*user-info*/
@@ -207,10 +224,12 @@ main .chat-details{
     flex-direction: column;
     justify-content: space-around;
     color: #6b7377;
+    font-size: 12px;
 }
 
 .user-access .bold{
     color: #000;
+    font-size: 18px;
 }
 
 /*user-button-box*/
@@ -228,7 +247,7 @@ main .chat-details{
 }
 /*chat-text*/
 main .chat-text{
-    height: calc(100% - 180px);
+    flex-grow: 1;
     width: 100%;
     background-image: url("../img/mine.jpg");
     overflow-y: scroll;
@@ -253,6 +272,7 @@ main .chat-text{
 .chat-text .message{
     padding: 15px 5px 5px 10px;
     min-width: 200px;
+    max-width: 40%;
     border-radius: 12px;
     margin-top: 10px;
     display: flex;
@@ -261,12 +281,12 @@ main .chat-text{
     
 }
 
-.user-message{
+.sent{
     background-color: #d5f9ba;
     align-self: flex-end;
 }
 
-.friend-message{
+.recived{
     background-color: #fff;
     align-self: flex-start;
 }
@@ -278,6 +298,7 @@ main .chat-input{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .chat-input .icon{
