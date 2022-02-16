@@ -121,6 +121,11 @@ const vue = new Vue (
                         contact.visible = false;
                     }
                  });
+            },
+
+            cancelMessage(index){
+                console.log(index)
+                this.contacts[this.active].messages.splice(index,1);
             }
            
         }

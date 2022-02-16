@@ -280,6 +280,36 @@ main .chat-text{
     align-items:flex-start;
     
 }
+
+.message-text{
+    position: relative;
+    width: 100%;
+}
+/*message menu*/
+.chat-area .message-menu{
+    background-color: #fff;
+    padding: 20px;
+    position: absolute;
+    z-index: 999;
+    box-shadow: 5px 5px 10px 2px #6b7377;
+    top: 20px;
+    right: 0;
+}
+
+.message-menu ul{
+    list-style: none;
+}
+
+.message-menu ul li{
+    padding: 5px;
+    color: #000;
+    
+}
+
+.message-menu ul  a{
+    text-decoration: none;
+}
+
 /*classi per cambiare il colore e la posizione dei messagge*/
 .sent{
     background-color: #d5f9ba;

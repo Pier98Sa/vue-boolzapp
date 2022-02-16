@@ -105,10 +105,20 @@
             <!--Elenco della cronologia dei messaggi-->
             <div class="chat-text">
 
-                <div class="chat-area" v-for="message in contacts[active].messages">
+                <div class="chat-area" v-for="(message, index) in contacts[active].messages">
                     <div class="message" :class="(message.status == 'sent') ? 'sent':'recived'">
-                        <span>{{message.text}}</span>
+                        <div class="message-text">{{message.text}}
+                            <div class="message-menu">
+                                <ul>
+                                    <a href="#"><li>Message Info</li></a>
+                                    <a href="#" @click="cancelMessage(index)"><li>Delete Message</li></a>
+                                </ul>
+                            </div>
+                        </div>
+                        
                         <span class="message-date">{{message.date}}</span>
+
+                        
                     </div>
                   
                 </div>
