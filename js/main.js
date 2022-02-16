@@ -116,14 +116,10 @@ const vue = new Vue (
             search(){
                  this.contacts.forEach((contact) => {
                     if (contact.name.toLowerCase().includes(this.inputFilter.toLowerCase())){
-                        console.log(contact.name + " è incluso");
                         contact.visible = true;
                     } else{
-                        console.log(contact.name + " non è incluso");
                         contact.visible = false;
-                    }  
-
-                    inputFilter='';
+                    }
                  });
             }
            
