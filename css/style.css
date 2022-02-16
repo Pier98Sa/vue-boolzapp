@@ -126,17 +126,15 @@ aside .switch{
     border: none;
     margin-right: 5px;
 }
-.input-box input:focus{
-    outline: none ;  
-}
+
 
 .input-box ::placeholder{
     color: #b9b9b9;
 }
 .input-box i{
     position: absolute;
-    left: 16px;
-    top: 16px;
+    left: 19px;
+    top: 15px;
     
 }
 /*conversations*/
@@ -152,7 +150,9 @@ aside .switch{
     border: 1px solid #efefef;
     
 }
-
+.none {
+    display: none;
+}
 .chat.active,
 .chat:hover{
     background-color: #e9ebeb;
@@ -328,3 +328,4 @@ main .chat-input{
 .message-input input:focus{
     outline: none ;  
 }
+

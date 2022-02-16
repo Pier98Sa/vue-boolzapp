@@ -30,7 +30,7 @@
                 </div>
 
             </div>
-
+            
             <!--Sezione per attivare le notifiche-->
             <div class="switch">
 
@@ -48,7 +48,7 @@
             <!--Sezione input per ricerca della chat-->
             <div class="input-box">
                 <div class="input-section">
-                    <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="inputFilter">
+                    <input type="text" @keyup = "search()" placeholder="Cerca o inizia una nuova chat" v-model="inputFilter">
                     <i class="fa-solid fa-magnifying-glass"></i> 
                 </div>
                
@@ -57,8 +57,8 @@
             <!--Sezione delle conversazioni-->
             <div class="conversations">
 
-                <div class="chat" :class="(index == active) ? 'active':''" v-for="(contact,index) in contacts" @click="changeChat(index)">
-
+                <div v-if="contact.visible" class="chat" :class="(index == active) ? 'active':''" :class="(contact.visible) ? '':'none'" v-for="(contact,index) in contacts" @click="changeChat(index)" >
+                    
                     <div class="chat-avatar">
                         <img class="avatar" :src="`img/avatar${contact.avatar}.jpg`" alt="user picture">
                     </div>
@@ -73,7 +73,7 @@
                            <p > Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae velit debitis assumenda enim dolore laudantium expedita perferendis mollitia, nam qui libero dolor laboriosam beatae aliquid eius aliquam quaerat cumque magnam?</p>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
                
@@ -123,7 +123,7 @@
                 </div>
                 
                 <div class="message-input">
-                    <input @keyup.enter="sendMessage" type="text" placeholder="Scrivi un messaggio" v-model = "newMessage">
+                    <input @keyup.enter="sendMessage" type="text" placeholder="Scrivi un messaggio..." v-model = "newMessage">
                 </div>
                 
                 <div class="icon">
@@ -139,6 +139,8 @@
     
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script>dayjs().format()</script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

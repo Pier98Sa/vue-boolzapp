@@ -103,14 +103,27 @@ const vue = new Vue (
                 if(this.newMessage.trim() == ''){
                     
                 }else{
-                    this.contacts[this.active].messages.push({date:'15/02/2022 18:15', text: this.newMessage.trim(), status: 'sent' });
+                    this.contacts[this.active].messages.push({date: dayjs().format('DD/MM/YYYY HH:mm:ss'), text: this.newMessage.trim(), status: 'sent' });
                 }
                 
                 this.newMessage = "";
 
                 setTimeout(() => {
-                    this.contacts[this.active].messages.push({date:'15/02/2022 18:15', text: 'ok', status: 'received' });
+                    this.contacts[this.active].messages.push({date: dayjs().format('DD/MM/YYYY HH:mm:ss'), text: 'ok', status: 'received' });
                 },1000);
+            },
+
+            search(){
+                 this.contacts.forEach((contact) => {
+                    if (contact.name.toLowerCase().includes(this.inputFilter.toLowerCase())){
+                        console.log(contact.name + " è incluso")
+                    } else{
+                        console.log(contact.name + " non è incluso")
+                        contact.visible = false;
+                    }  
+
+                    inputFilter='';
+                 });
             }
            
         }
