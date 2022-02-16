@@ -5,6 +5,7 @@ const vue = new Vue (
             inputFilter:'',
             newMessage:'',
             active: 0,
+            isHidden: true,
             contacts: [
                 {
                     name: 'Michele',
@@ -126,8 +127,11 @@ const vue = new Vue (
             cancelMessage(index){
                 console.log(index)
                 this.contacts[this.active].messages.splice(index,1);
-            }
+            },
            
+            showMenu(){
+                this.isHidden = !this.isHidden;
+            }
         }
     }
 );

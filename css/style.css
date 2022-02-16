@@ -31,6 +31,10 @@ body{
     width: 60px;
     border-radius: 50%;
 }
+
+.none {
+    display: none;
+}
 /*Aside*/
 aside{
     height: 100%;
@@ -150,9 +154,7 @@ aside .switch{
     border: 1px solid #efefef;
     
 }
-.none {
-    display: none;
-}
+
 .chat.active,
 .chat:hover{
     background-color: #e9ebeb;

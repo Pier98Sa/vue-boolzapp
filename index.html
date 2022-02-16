@@ -106,14 +106,18 @@
             <div class="chat-text">
 
                 <div class="chat-area" v-for="(message, index) in contacts[active].messages">
+
                     <div class="message" :class="(message.status == 'sent') ? 'sent':'recived'">
-                        <div class="message-text">{{message.text}}
-                            <div class="message-menu">
+
+                        <div class="message-text" @click="showMenu()">{{message.text}}
+
+                            <div class="message-menu" :class="(isHidden) ? 'none':''">
                                 <ul>
                                     <a href="#"><li>Message Info</li></a>
                                     <a href="#" @click="cancelMessage(index)"><li>Delete Message</li></a>
                                 </ul>
                             </div>
+
                         </div>
                         
                         <span class="message-date">{{message.date}}</span>
