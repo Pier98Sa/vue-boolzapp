@@ -129,8 +129,14 @@ const vue = new Vue (
                 this.contacts[this.active].messages.splice(index,1);
             },
            
-            showMenu(){
-                this.isHidden = !this.isHidden;
+            showMenu(index){
+                
+                console.log(index)
+            },
+
+            lastMessage(index){
+
+                     
             }
         }
     }
