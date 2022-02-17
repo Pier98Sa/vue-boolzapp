@@ -151,7 +151,7 @@ aside .switch{
     display: flex;
     color: #b6b9bb;
     padding: 10px;
-    border: 1px solid #efefef;
+    border-top: 1px solid #efefef;
     
 }
 
@@ -194,7 +194,9 @@ aside .switch{
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-/*Main*/
+/********************************************
+             MAIN
+********************************************/
 main{
     height: 100%;
     width: 70%;
@@ -224,14 +226,19 @@ main .chat-details{
 .user-info .user-access{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
     color: #6b7377;
     font-size: 12px;
+    width: 60%;
 }
 
 .user-access .bold{
     color: #000;
     font-size: 18px;
+}
+
+.user-access .last-access{
+    padding-top: 5px;
 }
 
 /*user-button-box*/
@@ -286,6 +293,19 @@ main .chat-text{
 .message-text{
     position: relative;
     width: 100%;
+}
+
+.message-text i{
+    position: absolute;
+    right: 12px;
+    top: -12px;
+    color: #bac1bb;
+    display: none;
+    cursor: pointer;
+}
+
+.message:hover i{
+    display: block;
 }
 /*message menu*/
 .chat-area .message-menu{

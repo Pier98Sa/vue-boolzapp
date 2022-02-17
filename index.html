@@ -57,7 +57,10 @@
             <!--Sezione delle conversazioni-->
             <div class="conversations">
 
-                <div v-if="contact.visible" class="chat" :class="(index == active) ? 'active':''" :class="(contact.visible) ? '':'none'" v-for="(contact,index) in contacts" @click="changeChat(index)" >
+                <div v-if="contact.visible" 
+                    class="chat" :class="(index == active) ? 'active':''" :class="(contact.visible) ? '':'none'" 
+                    v-for="(contact,index) in contacts" 
+                    @click="changeChat(index)" >
                     
                     <div class="chat-avatar">
                         <img class="avatar" :src="`img/avatar${contact.avatar}.jpg`" alt="user picture">
@@ -66,11 +69,11 @@
                     <div class="chat-items">
                         <div class="chat-info">
                             <span class="bold">{{contact.name}}</span>
-                            <span class="date">10/01/2020 16:15:22</span>
+                            <span class="date">{{lastMessageDate(index)}}</span>
                         </div>
     
-                        <div class="message">
-                           <p > Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae velit debitis assumenda enim dolore laudantium expedita perferendis mollitia, nam qui libero dolor laboriosam beatae aliquid eius aliquam quaerat cumque magnam?</p>
+                        <div class="message" >
+                            {{lastMessage(index)}}
                         </div>
                     </div>
 
@@ -88,8 +91,7 @@
                     
                     <div class="user-access">
                         <span class="bold">{{contacts[active].name}}</span>
-                        <span>Ultimo accesso oggi 10/01/2020</span>
-                        <span>alle 16:15:22</span>
+                        <span class="last-access">Ultimo accesso oggi alle {{lastMessageDate(active)}} </span>
                     </div>
 
                 </div>
@@ -107,13 +109,14 @@
 
                 <div class="chat-area" v-for="(message, index) in contacts[active].messages">
 
-                    <div class="message" @click="show = index" :class="(message.status == 'sent') ? 'sent':'recived'">
+                    <div class="message"  :class="(message.status == 'sent') ? 'sent':'recived'">
 
                         <div class="message-text">
                             {{message.text}}
 
-                             <!--<div v-show="show === index" class="message-menu" >-->   
-                            <div class="message-menu" >
+                             <i class="fa fa-chevron-down" @click="showMenu(index)"></i>
+                             <!--menu a comparsa del messaggio-->   
+                            <div class="message-menu" v-if = "isHidden.status == false && isHidden.index === index">
                                 <ul>
                                     <a href="#"><li>Message Info</li></a>
                                     <a href="#" @click="cancelMessage(index)"><li>Delete Message</li></a>

@@ -5,7 +5,10 @@ const vue = new Vue (
             inputFilter:'',
             newMessage:'',
             active: 0,
-            isHidden: true,
+            isHidden: { 
+                status: true, 
+                index : null
+            },
             contacts: [
                 {
                     name: 'Michele',
@@ -97,6 +100,8 @@ const vue = new Vue (
             //funzione per cambiare la chat visualizzata con l'utilizzo di un indice  
             changeChat(index){
                 this.active = index;
+                this.isHidden.status = false;
+                this.isHidden.index = null;
             },
             
             //funzione per inviare un messaggio e riceverne uno di risposta dopo un secondo
@@ -114,9 +119,10 @@ const vue = new Vue (
                 },1000);
             },
 
+            //funzione per filtrare i contatti
             search(){
                  this.contacts.forEach((contact) => {
-                    if (contact.name.toLowerCase().includes(this.inputFilter.toLowerCase())){
+                    if (contact.name.toLowerCase().includes( this.inputFilter.toLowerCase() ) ){
                         contact.visible = true;
                     } else{
                         contact.visible = false;
@@ -124,20 +130,34 @@ const vue = new Vue (
                  });
             },
 
+            //funzione per cancellare i contatti
             cancelMessage(index){
                 console.log(index)
                 this.contacts[this.active].messages.splice(index,1);
+                this.isHidden.status = false;
+                this.isHidden.index = null;
+
             },
            
+            //funzione per mostrare il menu del messaggio
             showMenu(index){
                 
-                console.log(index)
+                this.isHidden.status = (this.isHidden.status) ? false : true;
+                this.isHidden.index = index;
             },
 
+            //funzione per recuperare l'ultimo messaggio della chat
             lastMessage(index){
+                let contact = this.contacts[index];
+                return contact.messages[contact.messages.length - 1].text;  
+            },
 
-                     
-            }
+            //funzione per recuperare data e ora dell'ultimo messaggio della chat
+            lastMessageDate(index){
+                let contact = this.contacts[index];
+                return  contact.messages[contact.messages.length - 1].date;
+            },
+
         }
     }
 );
